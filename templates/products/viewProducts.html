@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">price</th>
+        <th scope="col">img</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %} {% if product %}
+      <tr>
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.title}}</td>
+        <td>${{product.price}}</td>
+        <td><img class="img_product" src="{{product.image}}" alt="" /></td>
+        <td><a href="{% url 'agregar_producto' product.id %} "><button type="button" class="btn btn-primary">Añadir</button></a></td>
+      </tr>
+      {% endif %} {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

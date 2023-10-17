@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+    {% if carForView %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">price</th>
+            <th scope="col">img</th>
+            <th scope="col">cant</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for product in carForView %}
+                <tr>
+                    <th scope="row">{{product.id}}</th>
+                    <td>{{product.title}}</td>
+                    <td>${{product.price}}</td>
+                    <td><img class="img_product" src="{{product.image}}" alt="" /></td>
+                    <td>{{product.cant}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>   
+      <a href="{% url 'deleteCart' %}"><button class="btn btn-danger">Borrar carro</button></a>        
+    {% else %}
+      <h2>No hay productos</h2>
+    {% endif %}
+</section>
+
+{% endblock %}

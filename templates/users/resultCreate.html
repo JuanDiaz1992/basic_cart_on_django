@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        <h1>{{result}}</h1>
+    </section>
+    <a href="{% url 'usersAdmin' %}">
+        <button>Volver a los Usuarios</button>
+    </a>
+{% endblock %}

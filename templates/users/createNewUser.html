@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %} 
+<section>
+  <form method="post" action="{% url 'createNewUser' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="name"
+        aria-describedby="emailHelp"
+      />
+      <div id="name" class="form-text">Escriba su nombre completo</div>
+    </div>
+    <div class="mb-3">
+      <label for="user" class="form-label">Usuario</label>
+      <input
+        type="text"
+        name="user"
+        class="form-control"
+        id="user"
+        aria-describedby="emailHelp"
+      />
+      <div id="user" class="form-text">Cree un nombre de usuario</div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+      <div id="email" class="form-text">Ingrese su correo.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        {% if users %}
+            {% for i in users %}
+                <p>{{ i }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No hay usuarios disponibles.</p>
+
+        {% endif %}
+        <a href="{% url 'createNewUser' %}"><button>Añadir usuarios</button></a>
+        
+    <section>
+{% endblock %}
+
